@@ -30,7 +30,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-
       - run: npm i
-      - run: npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch
+      - run: npx tailwindcss -i ./src/input.css -o ./dist/output.css --minify --watch
       - run: mkdir -p public
       - run: cp ./src/* ./public/
       - run: mv ./dist ./public/
