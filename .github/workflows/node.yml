@@ -29,14 +29,16 @@ jobs:
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
-      - run: npm i
-      - run: npx tailwindcss -i ./src/input.css -o ./dist/output.css --minify --watch
-      - run: mkdir -p public
-      - run: cp ./src/* ./public/
-      - run: mv ./dist ./public/
+      - run: |
+          npm i
+          npx tailwindcss -i ./src/input.css -o ./dist/output.css --minify
+          mkdir -p ./public
+          cp -r ./src/* dist ./public/
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v3.9.2
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
-          exclude_assets: 'input.css,src/input.css'
+          exclude_assets: "input.css,src/input.css"
+          user_name: "github-actions[bot]"
+          user_email: "github-actions[bot]@users.noreply.github.com"
