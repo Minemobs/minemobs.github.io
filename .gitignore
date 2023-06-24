@@ -1,6 +1,3 @@
-# Created by https://www.toptal.com/developers/gitignore/api/svelte,node,vscode
-# Edit at https://www.toptal.com/developers/gitignore?templates=svelte,node,vscode
-
 ### Node ###
 # Logs
 logs
@@ -148,7 +145,6 @@ dist
 .svelte-kit/
 package
 
-#!! ERROR: vscode is undefined. Use list command to see defined gitignore types !!#
-
-# End of https://www.toptal.com/developers/gitignore/api/svelte,node,vscode
-
+### Other stuff ###
+package-lock.json
+.vscode/
