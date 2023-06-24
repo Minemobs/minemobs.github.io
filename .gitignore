@@ -148,3 +148,4 @@ package
 ### Other stuff ###
 package-lock.json
 .vscode/
+build/

@@ -3,10 +3,10 @@
 	import './styles.css';
 </script>
 
-<div class="app bg-[#b7bdf8] dark:bg-[#363a4f] flex flex-1 justify-start">
+<div class="app bg-[#363a4f] flex flex-1 justify-start">
 	<Header />
 
-	<main class="bg-[#eff1f5] dark:bg-[#1e2030] space-y-4 flex flex-1 justify-center items-center">
+	<main class="bg-[#1e2030] space-y-4 flex flex-1 justify-center items-center">
 		<slot />
 	</main>
 
