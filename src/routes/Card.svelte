@@ -13,7 +13,7 @@
 		{#if isImage()}
 			<img class="object-cover border-none w-full h-full rounded-lg rounded-b-none" src={imageSrc} alt="Project" />
 		{:else}
-			<video width="320" height="240" autoplay loop>
+			<video width="320" height="240" autoplay loop muted>
 				<!-- TODO: add captions -->
 				<source class="object-cover border-none w-full h-full rounded-lg rounded-b-none" src={imageSrc} />
 			</video>
