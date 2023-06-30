@@ -3,12 +3,10 @@
 	export let title: string;
 	export let description: string;
 	export let projectURL: string;
-	function isImage() {
-		return imageSrc.endsWith('.png') || imageSrc.endsWith('.jpg') || imageSrc.endsWith('.jpeg');
-	}
+	const isImage = () => imageSrc.endsWith('.png') || imageSrc.endsWith('.jpg') || imageSrc.endsWith('.jpeg');
 </script>
 
-<div class="max-w-xs rounded-md bg-[#24273a] shadow-md shadow-indigo-950">
+<div class="max-w-xs rounded-md bg-[#EFF1F5] dark:bg-[#24273a] shadow-md dark:shadow-indigo-950 shadow-[#7C7F93] transition-colors">
 	<div class="mt-3 pl-2 pr-2 shadow md:flex-shrink-0">
 		{#if isImage()}
 			<img
@@ -28,11 +26,11 @@
 		{/if}
 	</div>
 	<div class="mb-2 px-4 pt-3 md:px-6">
-		<h4 class="mb-3 text-xl font-semibold tracking-tight text-sky-300">{title}</h4>
-		<p class="mb-2 leading-normal text-white">{description}</p>
+		<h4 class="mb-3 text-xl font-semibold tracking-tight text-[#04A5E5] dark:text-sky-300">{title}</h4>
+		<p class="mb-2 leading-normal text-[#6C6F85] dark:text-[#A5ADCB]">{description}</p>
 		<a href={projectURL}>
-			<div class="m-2 flex flex-1 justify-center rounded-md bg-slate-700 py-3 md:m-5">
-				<button class="text-white">Github Repo</button>
+			<div class="m-2 flex flex-1 justify-center rounded-md bg-[#CCD0DA] dark:bg-slate-700 py-3 md:m-5">
+				<button class="text-black dark:text-white">Github Repo</button>
 			</div>
 		</a>
 	</div>
