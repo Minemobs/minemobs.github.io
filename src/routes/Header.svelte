@@ -1,83 +1,40 @@
 <script>
 	import { page } from '$app/stores';
-	import logo from '$lib/images/svelte-logo.svg';
 	import github from '$lib/images/github.svg';
 </script>
 
-<header class="shadow-md">
-	<div class="corner">
-		<a href="https://github.com/minemobs/minemobs.github.io">
-			<img src={github} alt="GitHub" />
+<header class="flex justify-between pl-2 pr-2 shadow-md">
+	<div class="h-12 w-12">
+		<a
+			href="https://github.com/minemobs/minemobs.github.io"
+			class="flex h-full w-full items-center justify-center">
+			<img src={github} alt="GitHub" class="h-8 w-8 object-contain" />
 		</a>
 	</div>
 
-	<nav>
-		<ul>
-			<li aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
+	<nav class="flex justify-center">
+		<ul class="relative m-0 flex h-12 list-none items-center justify-center gap-2 p-0">
+			<li aria-current={$page.url.pathname === '/' ? 'page' : undefined} class="relative h-full">
 				<a href="/">Home</a>
 			</li>
-			<li aria-current={$page.url.pathname === '/projects' ? 'page' : undefined} class="ml-2">
+			<li
+				aria-current={$page.url.pathname === '/projects' ? 'page' : undefined}
+				class="relative h-full">
 				<a href="/projects">My projects</a>
 			</li>
 		</ul>
 	</nav>
 
-	<div class="corner">
-		<a href="https://github.com/minemobs/minemobs.github.io">
-			<img src={github} alt="GitHub" />
+	<div class="h-12 w-12">
+		<a
+			href="https://github.com/minemobs/minemobs.github.io"
+			class="flex h-full w-full items-center justify-center">
+			<img src={github} alt="GitHub" class="h-8 w-8 object-contain" />
 		</a>
 	</div>
 </header>
 
 <style>
-	header {
-		display: flex;
-		justify-content: space-between;
-		@apply pl-2 pr-2;
-	}
-
-	.corner {
-		width: 3em;
-		height: 3em;
-	}
-
-	.corner a {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 100%;
-		height: 100%;
-	}
-
-	.corner img {
-		width: 2em;
-		height: 2em;
-		object-fit: contain;
-	}
-
-	nav {
-		display: flex;
-		justify-content: center;
-	}
-
-	ul {
-		position: relative;
-		padding: 0;
-		margin: 0;
-		height: 3em;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		list-style: none;
-		background: var(--background);
-		background-size: contain;
-	}
-
-	li {
-		position: relative;
-		height: 100%;
-	}
-
 	li[aria-current='page']::before {
 		--size: 6px;
 		content: '';
