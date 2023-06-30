@@ -3,13 +3,23 @@
 	export let title: string;
 	export let description: string;
 	export let projectURL: string;
+	function isImage() {
+		return imageSrc.endsWith(".png") || imageSrc.endsWith(".jpg") || imageSrc.endsWith(".jpeg");
+	}
 </script>
 
 <div class="max-w-xs rounded-md bg-[#24273a]">
 	<div class="mt-3 pl-2 pr-2 md:flex-shrink-0 shadow">
-		<img class="object-cover border-none w-full h-full rounded-lg rounded-b-none" src={imageSrc} alt="Project" />
+		{#if isImage()}
+			<img class="object-cover border-none w-full h-full rounded-lg rounded-b-none" src={imageSrc} alt="Project" />
+		{:else}
+			<video width="320" height="240" autoplay loop>
+				<!-- TODO: add captions -->
+				<source class="object-cover border-none w-full h-full rounded-lg rounded-b-none" src={imageSrc} />
+			</video>
+		{/if}
 	</div>
-	<div class="max-sm:px-4 md:px-6 pt-3">
+	<div class="sm:px-4 md:px-6 pt-3 mb-2">
 		<h4 class="mb-3 text-xl font-semibold tracking-tight text-sky-300">{title}</h4>
 		<p class="mb-2 leading-normal text-white">{description}</p>
 		<a href={projectURL}>
