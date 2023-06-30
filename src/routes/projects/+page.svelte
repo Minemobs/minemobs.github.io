@@ -9,7 +9,7 @@
 	<meta name="description" content="About this app" />
 </svelte:head>
 
-<div class="flex flex-1 justify-center items-center max-sm:gap-10 md:gap-20 mx-5">
+<div class="grid grid-cols-1 md:grid-cols-2 justify-center items-center max-sm:gap-10 md:gap-20 mx-5">
 	<Card
 		imageSrc={japDictImg}
 		title="JapDict"
